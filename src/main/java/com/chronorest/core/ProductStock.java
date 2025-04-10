@@ -16,13 +16,13 @@ public class ProductStock {
     @GeneratedValue 
     private int productId;
 
-    @NotBlank
+    @NotBlank(message ="ProductName is is mandatory")
     private String productName;
 
-    @Min(0) @NotNull
+    @Min(0) @NotNull(message = "Quantity must not be null")
     private int quantity;
-    
-    @Min(0) @NotNull
+
+    @Min(0) @NotNull(message ="Price must not be null")
     private int price;
 
     public ProductStock() {

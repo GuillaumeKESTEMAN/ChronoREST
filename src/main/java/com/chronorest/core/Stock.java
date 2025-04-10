@@ -9,13 +9,15 @@ public class Stock {
 
     @NotNull
     @NotEmpty(message = "Stocks list cannot be empty")
-    private final List<ProductStock> stocks;
+    private final List<ProductStock> stock;
 
-    public List<ProductStock> getStocks() {
-        return stocks;
+    public Stock(List<ProductStock> stock) {
+        this.stock = stock;
     }
 
-    public Stock(List<ProductStock> stocks) {
-        this.stocks = stocks;
+    public List<ProductStock> getStock() {
+        return stock;
     }
+
+
 }
