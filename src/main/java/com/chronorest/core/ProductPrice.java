@@ -7,6 +7,7 @@ public class ProductPrice {
     @NotNull
     private final int productId;
 
+    @NotNull
     @Min(value = 0, message = "Price must be positive")
     private final double amount;
 
