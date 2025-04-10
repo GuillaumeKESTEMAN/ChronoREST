@@ -7,8 +7,8 @@ import jakarta.validation.constraints.NotNull;
 
 public class Stock {
 
-    @NotNull
-    @NotEmpty(message = "Stocks list cannot be empty")
+    @NotNull (message = "Stock list cannot be null")
+    @NotEmpty(message = "Stock list cannot be empty")
     private final List<ProductStock> stock;
 
     public Stock(List<ProductStock> stock) {

@@ -19,10 +19,10 @@ public class ProductStock {
     @NotBlank(message ="ProductName is is mandatory")
     private String productName;
 
-    @Min(0) @NotNull(message = "Quantity must not be null")
+    @Min(value = 0, message ="Quantity must be positive") @NotNull(message = "Quantity must not be null")
     private int quantity;
 
-    @Min(0) @NotNull(message ="Price must not be null")
+    @Min(value = 0, message="Price must be positive") @NotNull(message ="Price must not be null")
     private int price;
 
     public ProductStock() {
