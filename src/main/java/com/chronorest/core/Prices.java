@@ -6,7 +6,7 @@ import jakarta.validation.constraints.NotNull;
 import java.util.List;
 
 public class Prices {
-    @NotNull
+    @NotNull(message = "Prices list cannot be null")
     @NotEmpty(message = "Prices list cannot be empty")
     private final List<ProductPrice> prices;
 
