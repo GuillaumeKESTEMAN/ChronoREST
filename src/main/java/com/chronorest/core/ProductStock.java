@@ -15,10 +15,13 @@ public class ProductStock {
     @Id
     @GeneratedValue 
     private int productId;
+
     @NotBlank
     private String productName;
+
     @Min(0) @NotNull
     private int quantity;
+    
     @Min(0) @NotNull
     private int price;
 
@@ -29,21 +32,15 @@ public class ProductStock {
         return productId;
     }
 
-    public void setProductId(int productId) {
-        this.productId = productId;
-    }
 
     public String getProductName() {
         return productName;
     }
 
-    public void setProductName(String productName) {
-        this.productName = productName;
-    }
-
     public int getQuantity() {
         return quantity;
     }
+    
 
     public void setQuantity(int quantity) {
         this.quantity = quantity;
