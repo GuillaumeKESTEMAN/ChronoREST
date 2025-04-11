@@ -1,20 +1,26 @@
 package com.chronorest.core;
 
 import jakarta.validation.Valid;
-import org.springframework.http.HttpStatus;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.server.ResponseStatusException;
 
 @RestController
 @RequestMapping("/store/stock")
 public class StockController {
+    private final StockService stockService;
+
+    @Autowired
+    public StockController(StockService stockService) {
+        this.stockService = stockService;
+    }
+
     @GetMapping()
     public Stock getStock() {
-        throw new ResponseStatusException(HttpStatus.SERVICE_UNAVAILABLE);
+        return stockService.getStock();
     }
 
     @PostMapping()
     public Stock saveStock(@RequestBody @Valid Stock stock) {
-        throw new ResponseStatusException(HttpStatus.SERVICE_UNAVAILABLE);
+        return stockService.saveStock(stock);
     }
 }

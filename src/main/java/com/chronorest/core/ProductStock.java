@@ -1,7 +1,6 @@
 package com.chronorest.core;
 
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.Min;
@@ -12,7 +11,6 @@ import jakarta.validation.constraints.NotNull;
 @Table
 public class ProductStock {
     @Id
-    @GeneratedValue
     private Integer productId;
 
     @NotBlank(message ="ProductName is is mandatory")
@@ -22,9 +20,16 @@ public class ProductStock {
     private Integer quantity;
 
     @Min(value = 0, message="Price must be positive") @NotNull(message ="Price must not be null")
-    private Integer price;
+    private Double price;
 
     public ProductStock() {
+    }
+
+    public ProductStock(Integer productId, String productName, Integer quantity, Double price) {
+        this.productId = productId;
+        this.productName = productName;
+        this.quantity = quantity;
+        this.price = price;
     }
 
     public int getProductId() {
@@ -45,11 +50,11 @@ public class ProductStock {
         this.quantity = quantity;
     }
 
-    public Integer getPrice() {
+    public Double getPrice() {
         return price;
     }
 
-    public void setPrice(Integer price) {
+    public void setPrice(Double price) {
         this.price = price;
     }
     
