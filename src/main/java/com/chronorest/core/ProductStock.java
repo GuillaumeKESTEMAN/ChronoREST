@@ -19,10 +19,10 @@ public class ProductStock {
     private String productName;
 
     @Min(value = 0, message ="Quantity must be positive") @NotNull(message = "Quantity must not be null")
-    private int quantity;
+    private Integer quantity;
 
     @Min(value = 0, message="Price must be positive") @NotNull(message ="Price must not be null")
-    private int price;
+    private Integer price;
 
     public ProductStock() {
     }
@@ -36,20 +36,20 @@ public class ProductStock {
         return productName;
     }
 
-    public int getQuantity() {
+    public Integer getQuantity() {
         return quantity;
     }
-    
 
-    public void setQuantity(int quantity) {
+
+    public void setQuantity(Integer quantity) {
         this.quantity = quantity;
     }
 
-    public int getPrice() {
+    public Integer getPrice() {
         return price;
     }
 
-    public void setPrice(int price) {
+    public void setPrice(Integer price) {
         this.price = price;
     }
     

@@ -15,20 +15,20 @@ public class OrderItem {
     private int id;
 
     @NotNull(message = "Product ID cannot be null")
-    private int productId;
+    private Integer productId;
 
     @NotNull(message = "Quantity cannot be null")
     @Min(value = 1, message = "Quantity must be positive")
-    private int quantity;
+    private Integer quantity;
 
     public OrderItem() {
     }
 
-    public int getProductId() {
+    public Integer getProductId() {
         return productId;
     }
 
-    public int getQuantity() {
+    public Integer getQuantity() {
         return quantity;
     }
 }
