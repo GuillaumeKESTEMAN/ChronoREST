@@ -12,8 +12,8 @@ import jakarta.validation.constraints.NotNull;
 @Table
 public class ProductStock {
     @Id
-    @GeneratedValue 
-    private int productId;
+    @GeneratedValue
+    private Integer productId;
 
     @NotBlank(message ="ProductName is is mandatory")
     private String productName;

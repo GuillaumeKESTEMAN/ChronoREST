@@ -10,7 +10,7 @@ import java.util.List;
 @Table
 public class Order {
     @Id
-    private int id;
+    private Integer id;
 
     @OneToMany(cascade = {CascadeType.MERGE, CascadeType.PERSIST})
     @JoinColumn(name = "order_id")
