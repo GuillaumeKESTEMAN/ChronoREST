@@ -13,7 +13,7 @@ import jakarta.annotation.PostConstruct;
 
 @Configuration
 @Profile("dev")
-public class StoreConnexionInitializer {
+public class StoreConnectionInitializer {
 
     @Autowired
     private RestClient restClient;
@@ -21,12 +21,13 @@ public class StoreConnexionInitializer {
     @Value("${server.port}")
     private String port;
 
-    private String endpointUrl;
-
     @PostConstruct
     public Store RegisterStore() {
+
+        String endpointUrl = "";
+
         try {
-            String ip =InetAddress.getLocalHost().toString().split("/")[1];
+            String ip= InetAddress.getLocalHost().getHostAddress();
             endpointUrl = "http://"+ip+":"+port;
         } catch (UnknownHostException e) {
             e.printStackTrace();
