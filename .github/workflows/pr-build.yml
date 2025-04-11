@@ -33,9 +33,9 @@ jobs:
         run: |
           docker compose -f docker-compose.yml up -d
 
-      - name: Run tests
+      - name: Run tests during build
         run: |
-          docker compose exec app mvn verify
+          docker compose run --rm app mvn verify
 
       - name: Tear down Docker Compose
         if: always()
