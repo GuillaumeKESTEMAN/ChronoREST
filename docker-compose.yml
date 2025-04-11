@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  app:
+    image: chronorest-app
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: chronorest-app
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/chronorest
+      SPRING_DATASOURCE_USERNAME: chronorest
+      SPRING_DATASOURCE_PASSWORD: chronorest_password
+    depends_on:
+      - db
+
+  db:
+    image: postgres:latest
+    container_name: chronorest-db
+    environment:
+      POSTGRES_USER: chronorest
+      POSTGRES_PASSWORD: chronorest_password
+      POSTGRES_DB: chronorest
+    ports:
+      - "5432:5432"
