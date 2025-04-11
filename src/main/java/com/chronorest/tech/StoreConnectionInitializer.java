@@ -21,6 +21,9 @@ public class StoreConnectionInitializer {
     @Value("${server.port}")
     private String port;
 
+    @Value("${spring.application.name}")
+    private String applicationName;
+
     @PostConstruct
     public Store RegisterStore() {
 
@@ -33,7 +36,7 @@ public class StoreConnectionInitializer {
             e.printStackTrace();
         }
 
-        Store store = new Store(endpointUrl,"ChronoREST");
+        Store store = new Store(endpointUrl, applicationName);
             return restClient.post()
                     .uri("/central/stores")
                     .body(store)
