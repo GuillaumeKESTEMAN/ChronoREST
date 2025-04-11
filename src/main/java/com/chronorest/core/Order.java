@@ -12,7 +12,7 @@ public class Order {
     @Id
     private int id;
 
-    @OneToMany(cascade = {CascadeType.ALL})
+    @OneToMany(cascade = {CascadeType.MERGE, CascadeType.PERSIST})
     @JoinColumn(name = "order_id")
     @NotNull(message = "Items list cannot be null")
     private List<OrderItem> items = new ArrayList<>();
