@@ -12,7 +12,7 @@ import jakarta.validation.constraints.NotNull;
 public class OrderItem {
     @Id
     @GeneratedValue
-    private int id;
+    private Integer id;
 
     @NotNull(message = "Product ID cannot be null")
     private Integer productId;
