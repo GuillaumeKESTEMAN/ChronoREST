@@ -7,12 +7,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table
+@Table(name = "orders")
 public class Order {
     @Id
     private int id;
 
-    @OneToMany(cascade = {CascadeType.MERGE, CascadeType.PERSIST})
+    @OneToMany(cascade = {CascadeType.ALL})
     @JoinColumn(name = "order_id")
     @NotNull(message = "Items list cannot be null")
     private List<OrderItem> items = new ArrayList<>();
