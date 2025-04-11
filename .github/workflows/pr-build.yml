@@ -35,7 +35,7 @@ jobs:
 
       - name: Run tests during build
         run: |
-          docker compose run --rm --entrypoint mvn app verify
+          docker compose run --rm -w /app --entrypoint mvn app verify
 
       - name: Tear down Docker Compose
         if: always()
