@@ -5,22 +5,22 @@ import jakarta.validation.constraints.NotNull;
 
 public class ProductPrice {
     @NotNull(message = "Product ID cannot be null")
-    private final int productId;
+    private final Integer productId;
 
     @NotNull(message = "Price cannot be null")
     @Min(value = 0, message = "Price must be positive")
-    private final double amount;
+    private final Double amount;
 
-    public ProductPrice(int productId, double amount) {
+    public ProductPrice(Integer productId, Double amount) {
         this.productId = productId;
         this.amount = amount;
     }
 
-    public int getProductId() {
+    public Integer getProductId() {
         return productId;
     }
 
-    public double getAmount() {
+    public Double getAmount() {
         return amount;
     }
 }
