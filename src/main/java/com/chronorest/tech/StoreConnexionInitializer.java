@@ -19,15 +19,13 @@ public class StoreConnexionInitializer {
 
     @PostConstruct
     public Store RegisterStore() {
+        
         Store store = new Store(endpointUrl,"ChronoREST");
-        try {
             return restClient.post()
                     .uri("/central/stores")
                     .body(store)
                     .retrieve()
                     .body(Store.class);
-        } catch (RestClientResponseException e) {
-            throw e;
-        }
+
     }
 }
