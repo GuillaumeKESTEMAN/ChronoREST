@@ -5,9 +5,10 @@ COPY pom.xml .
 COPY src ./src
 RUN mvn clean package -DskipTests
 
-# Étape 2 : Exécuter l'application avec un JDK
+# Étape 2 : Exécuter l'application avec Maven disponible
 FROM eclipse-temurin:21-jdk
 WORKDIR /app
 COPY --from=build /app/target/*.jar app.jar
+RUN apt-get update && apt-get install -y maven
 EXPOSE 8080
 ENTRYPOINT ["java", "-jar", "app.jar"]
