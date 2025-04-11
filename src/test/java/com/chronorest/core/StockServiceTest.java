@@ -27,9 +27,11 @@ public class StockServiceTest {
         List<ProductStock> productStocks = new ArrayList<>();
         productStocks.add(new ProductStock(1, "Product A", 10, 100.0));
         Stock stock = new Stock(productStocks);
-        this.stockService.saveStock(stock);
-
+        Stock returnedStock = this.stockService.saveStock(stock);
         Stock actualStock = this.stockService.getStock();
+
+        Assertions.assertThat(returnedStock.getStock()).isNotEmpty();
+        Assertions.assertThat(returnedStock.getStock().getFirst().getProductName()).isEqualTo("Product A");
         Assertions.assertThat(actualStock.getStock()).isNotEmpty();
         Assertions.assertThat(actualStock.getStock().getFirst().getProductName()).isEqualTo("Product A");
     }
