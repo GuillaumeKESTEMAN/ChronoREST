@@ -11,7 +11,6 @@ import jakarta.validation.constraints.NotNull;
 @Entity
 @Table
 public class ProductStock {
-
     @Id
     @GeneratedValue 
     private int productId;
