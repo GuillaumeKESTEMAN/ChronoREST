@@ -15,7 +15,7 @@ public class PricesController {
     }
 
     @PostMapping()
-    public Stock savePrices(@RequestBody @Valid Prices prices) {
+    public Prices savePrices(@RequestBody @Valid Prices prices) {
         throw new ResponseStatusException(HttpStatus.SERVICE_UNAVAILABLE);
     }
 }
