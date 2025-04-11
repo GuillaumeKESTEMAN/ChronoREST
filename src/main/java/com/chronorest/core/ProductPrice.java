@@ -1,6 +1,6 @@
 package com.chronorest.core;
 
-import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.DecimalMin;
 import jakarta.validation.constraints.NotNull;
 
 public class ProductPrice {
@@ -8,7 +8,7 @@ public class ProductPrice {
     private final Integer productId;
 
     @NotNull(message = "Price cannot be null")
-    @Min(value = 0, message = "Price must be positive")
+    @DecimalMin(value = "0.0", message = "Amount must be positive")
     private final Double amount;
 
     public ProductPrice(Integer productId, Double amount) {
